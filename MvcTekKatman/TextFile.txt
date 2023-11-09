@@ -1,0 +1,5 @@
+﻿Okul database i oluşturucaz
+
+User, School, ve class entity leri olacak
+
+Role olarak Admin, student, öğretmen

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MvcTekKatman.ViewModels.SchoolVms.SchoolListvm>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SchoolId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.SchoolId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.SchoolId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
